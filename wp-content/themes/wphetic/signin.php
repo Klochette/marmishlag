@@ -1,12 +1,11 @@
 
 <?php 
     /*
-    * Template Name: Login
+    * Template Name: Signin
     * Template Post Type: page
     */
 ?>
 <?php get_header(); ?>
 <?php
-    wp_login_form()
 ?>
 <?php get_footer(); ?>
