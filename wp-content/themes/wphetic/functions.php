@@ -25,8 +25,7 @@ function montheme_init() {
         'public' => true,
         'menu_position' => 3,
         'menu_icon' => 'dashicons-food',
-        'show_in_rest' => true,
-        'supports' => ['title', 'editor', 'thumbnail'],
+        'supports' => ['thumbnail'],
     ]);
 
     wp_insert_term('Mexicain', 'nationalite');
@@ -68,8 +67,25 @@ function site_router(){
     }
 };
 
+function wphetic_add_metabox(){
+    add_meta_box(
+        'sponso',
+        'Recette',
+        'wphetic_metabox_render',
+        'recipe',
+    );
+};
+
+function wphetic_metabox_render(){
+    ?>
+        <label>ingrédients (séparer avec des "\")</label>
+        <input type="textarea" name="sponso" id="sponso" style="width: 100%; height: 40px"/>
+    <?php
+};
+
 add_filter('show_admin_bar', '__return_false');
 
+add_action('add_meta_boxes', 'wphetic_add_metabox');
 add_action('init', 'montheme_init');
 add_action("after_setup_theme", "wphetic_theme_support");
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
