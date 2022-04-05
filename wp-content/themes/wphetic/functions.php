@@ -1,7 +1,7 @@
 <?php
 
 function montheme_init() {
-    register_taxonomy('nationalite', 'post', [
+    register_taxonomy('nationalite', 'recipe', [
         'labels' => [
             'name' => 'Nationalité',
             'singular_name' => 'Nationalité',
@@ -19,6 +19,16 @@ function montheme_init() {
         'hierarchical' => true,
         'public' => true,
     ]);
+
+    register_post_type('recipe', [
+        'label' => 'Recettes',
+        'public' => true,
+        'menu_position' => 3,
+        'menu_icon' => 'dashicons-food',
+        'show_in_rest' => true,
+        'supports' => ['title', 'editor', 'thumbnail'],
+    ]);
+
     wp_insert_term('Mexicain', 'nationalite');
     wp_insert_term('Asiatique', 'nationalite');
     wp_insert_term('Chinois', 'nationalite');
