@@ -10,6 +10,9 @@
                 <a href="<?php the_permalink(); ?>">Decouvrir plus...</a>
 			</div>
 		<?php endwhile; ?>
+		<?php
+			the_terms(get_the_ID(), 'nationalité');
+		?>
 	</div>
 <?php endif; ?>
 <?php get_footer(); ?>
