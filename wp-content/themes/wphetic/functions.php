@@ -25,7 +25,7 @@ function montheme_init() {
         'public' => true,
         'menu_position' => 3,
         'menu_icon' => 'dashicons-food',
-        'supports' => ['title', 'thumbnail'],
+        'supports' => ['title', 'thumbnail', 'comments'],
     ]);
 
     wp_insert_term('Mexicain', 'nationalite');
