@@ -34,28 +34,42 @@ if(!empty($_POST)){
 ?>
 
 <?php get_header();?>
-<h1>Se connecter</h1>
 <?php if ($error): ?>
     <div>
         <?php echo $error; ?>
     </div>
 <?php endif ?>
-<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" >
-    
-<label for="user_login">Votre pseudo</label>
-    <input type="text" value="<?php echo isset($p['user_login']) ? $p['user_login'] : ''; ?>" name="user_login" id="user_login">
-    
-    <label for="user_email">Votre email</label>
-    <input type="text" value="<?php echo isset($p['user_email']) ? $p['user_email'] : ''; ?>" name="user_email" id="user_login">
+<div class="container">
+    <div class="container__left">
+    </div>
+    <div class="container__right">
+        <div class="right__login">
+            <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" >
+                <div class="login__input">
+                    <label for="user_login">Votre pseudo</label>
+                    <input type="text" value="<?php echo isset($p['user_login']) ? $p['user_login'] : ''; ?>" name="user_login" id="user_login">
+                </div>
+                <div class="login__input">
+                    <label for="user_email">Votre email</label>
+                    <input type="text" value="<?php echo isset($p['user_email']) ? $p['user_email'] : ''; ?>" name="user_email" id="user_login">
+                </div>
 
-    <label for="user_pass">Votre mot de passe</label>
-    <input type="password" value="<?php echo isset($p['user_pass']) ? $p['user_pass'] : ''; ?>" name="user_pass" id="user_password">
+                <div class="login__input">
+                    <label for="user_pass">Votre mot de passe</label>
+                    <input type="password" value="<?php echo isset($p['user_pass']) ? $p['user_pass'] : ''; ?>" name="user_pass" id="user_password">
+                </div>
 
-    <label for="user_pass2">Confirmez votre mot de passe</label>
-    <input type="password" name="user_pass2" id="user_password">
+                <div class="login__input">
+                    <label for="user_pass2">Confirmez votre mot de passe</label>
+                    <input type="password" name="user_pass2" id="user_password">
+                </div>
 
-    <input type="submit" value="Se connecter">
+                <div class="login__submit">
+                    <input class="submit" type="submit" value="Se connecter">
+                </div>
 
-</form>
- 
+            </form>
+        </div>
+    </div>
+</div>
 <?php get_footer();?>

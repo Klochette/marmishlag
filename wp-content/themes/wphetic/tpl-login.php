@@ -45,7 +45,7 @@ if(!empty($_POST)){
                 <div class="login__submit">
                     <input class="submit" type="submit" value="Login">
                 </div>
-                
+
                 <?php if ($error): ?>
                     <div>
                         <p class="error"><?=$error; ?></p>
