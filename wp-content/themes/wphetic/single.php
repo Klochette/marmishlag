@@ -16,6 +16,7 @@
 ?>
 
 <?php
+
     // init var for template
     $categories =  get_the_category(get_the_ID());
     $ingredients = explode("\\" ,get_post_meta( get_the_ID(), 'ingredients', true ));
@@ -99,6 +100,10 @@
 	<?php 
         endwhile;
         endif; 
+
+        if (comments_open() || get_comments_number()){
+            comments_template();
+        }
     ?>
 <?php get_footer(); ?>
 
