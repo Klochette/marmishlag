@@ -19,9 +19,9 @@
     // init var for template
     $categories =  get_the_category(get_the_ID());
     $ingredients = explode("\\" ,get_post_meta( get_the_ID(), 'ingredients', true ));
-    $prix = get_post_meta(get_the_ID(), 'prix');
-    $temps_de_preparation = get_post_meta( get_the_ID(), 'temps_de_preparation');
-    $nb_personne = get_post_meta( get_the_ID(), 'nb_personne');
+    $price = get_post_meta(get_the_ID(), 'price');
+    $duration = get_post_meta( get_the_ID(), 'duration');
+    $nb_parts = get_post_meta( get_the_ID(), 'nb_parts');
     $preparation = explode("\\" ,get_post_meta( get_the_ID(), 'preparation', true ));
 ?>
 <?php get_header(); ?>
@@ -42,19 +42,19 @@
             <div class="infos_container">
                 <div class="first">
                     <div class="details d-f">
-                        <?php if(isset($prix)) : ?>
-                            <p><strong>Temps </strong><br /> <span><?= $temps_de_preparation[0] ?> min</span></p>
+                        <?php if(isset($duration)) : ?>
+                            <p><strong>Temps </strong><br /> <span><?= $duration[0] ?></span></p>
                         <?php endif ?>
-                        <?php if(isset($prix)) : ?>
-                            <p><strong>Prix </strong><br /> <span><?= $prix[0] ?>€</span></p>
+                        <?php if(isset($price)) : ?>
+                            <p><strong>Prix </strong><br /> <span><?= $price[0] ?>€</span></p> 
                         <?php endif ?>
-                        <?php if(isset($nb_personne)) : ?>
-                            <p><strong>Nb pers </strong><br /> <span><?= $nb_personne[0] ?></span></p>
+                        <?php if(isset($nb_parts)) : ?>
+                            <p><strong>Nb pers </strong><br /> <span><?= $nb_parts[0] ?></span></p>
                         <?php endif ?>
                     </div>
                     <div>
                         <p><strong>Ingrédients :</strong></p>
-                        <?php if(isset($prix)) : ?>
+                        <?php if(isset($ingredients)) : ?>
                             <ul>
                                 <?php foreach ($ingredients as $ingredient) : ?>
                                     <li><?= $ingredient ?></li>
@@ -90,3 +90,7 @@
         endif; 
     ?>
 <?php get_footer(); ?>
+
+
+
+

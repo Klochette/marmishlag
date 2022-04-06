@@ -48,7 +48,7 @@ h3 {
 }
 
 .header {
-    background-color: #B795FE;
+    background-color: #FFA800;
     padding: 2rem 2rem 10rem 5rem;
     padding-bottom: 10rem;
 }
@@ -132,7 +132,7 @@ h3 {
 
 .preparation h3::after {
     content: '';
-    background-color: #B795FE;
+    background-color: #FFA800;
     width: 35%;
     height: 10px;
     position: absolute;
@@ -220,6 +220,7 @@ h3 {
     align-items: center;
     overflow-x: scroll;
     padding-bottom: 1rem;
+    padding-left: 1rem;
     position: relative;
 }
 
@@ -253,6 +254,7 @@ ul::-webkit-scrollbar-button {
     border: 1.5px solid #FFA800;
     padding: 0.25rem 3rem;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .filter p {
@@ -285,6 +287,7 @@ ul::-webkit-scrollbar-button {
     max-height: 65%;
     height: 275px;
 }
+
 
 .post_card .img img {
     height: 100%;
@@ -381,7 +384,7 @@ ul::-webkit-scrollbar-button {
     width: 60%;
     height: 64px;
     border: none;
-    background-color: #B795FE;
+    background-color: #FFA800;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;

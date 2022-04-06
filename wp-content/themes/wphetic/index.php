@@ -10,7 +10,19 @@
 
 <?php
 	// init var for post
-	$categories =  get_categories();
+	$categories =  get_terms(array(
+		'taxonomy' => 'nationalite',
+	));
+?>
+
+<?php 
+
+$args = array(
+    'post_type'=> 'recipe'
+);              
+
+$the_query = new WP_Query( $args );
+
 ?>
 
 <?php get_header(); ?>
@@ -26,16 +38,16 @@
 			</ul>
 		</div>
 		<div class="post_ctn">
-			<?php while (have_posts()) : ?>
-				<?php the_post(); ?>
+			<?php while ( $the_query->have_posts() ) : 
+				$the_query->the_post();  ?>
 				<?php
 					// init var for post
 					$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ) );
-					$categories_item =  get_the_category(get_the_ID());
-
-					$categories = get_the_category(get_the_ID());
+					// $categories_item =  get_the_category(get_the_ID());
+					$categories_item = get_the_terms( $post->ID, 'nationalite' ); 
+					// $categories = get_categories($args);
 					$articleCategory = '';
-					foreach ($categories as $category){
+					foreach ($categories_item as $category){
 						$articleCategory = $articleCategory . ' ' . $category->slug;
 					}
 				?>
@@ -44,7 +56,8 @@
 						</div>
 						<h2 class="title"><?php the_title(); ?></h2>
 						<div class="d-f">
-							<?php foreach($categories_item as $categorie) : ?>
+							<?php
+							 foreach($categories_item as $categorie) : ?>
 								<p class='item'> <?= $categorie->name ?></p>
 							<?php endforeach ?>
 						</div>
@@ -73,4 +86,3 @@ list_ctn.addEventListener('click', (e) => {
 		currentCategory.includes(elementCategory) || elementCategory === 'all' ? display(card, 'block') : display(card, 'none');
     });})
 </script>
-
