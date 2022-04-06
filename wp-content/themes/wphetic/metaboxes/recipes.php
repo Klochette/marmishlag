@@ -6,6 +6,8 @@ class RecipesMetaBox {
         add_action('add_meta_boxes', [self::class, 'add']);
         add_action('save_post', [self::class, 'save']);
         add_action('edit_post', [self::class, 'edit']);
+        add_action('admin_menu', [self::class, 'remove_meta_boxes']);
+        add_action('update_option', [self::class, 'turn_on_comments']);
     }
 
     public static function add (){
@@ -39,6 +41,17 @@ class RecipesMetaBox {
             [self::class, 'time'],
             'recipe',
         );
+    }
+
+    // Sets the comments to allowed by default
+    function turn_on_comments() { 
+        update_option('default_comment_status', 'open');
+    } 
+    
+    
+    // Hides the metabox in the edit screen (replace post-type-here with your custom post type)
+    function remove_meta_boxes() {
+        remove_meta_box('commentstatusdiv', 'recipe', 'normal');
     }
 
     function ingredients_preparation(){
