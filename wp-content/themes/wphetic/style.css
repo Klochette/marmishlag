@@ -302,77 +302,80 @@ ul::-webkit-scrollbar-button {
     margin-left: 1rem;
 }
 
-.container{
+/* LOG IN SIGN IN */
+
+.container {
     width: 100vw;
     height: calc(100vh - 80px);
     display: flex;
-
 }
 
-.container__left{
+.container__left {
     background-image: url("assets/pancakemiam.png");
     height: 100%;
     flex-basis: 50%;
 
 }
 
-.container__right{
+.container__right {
     height: 100%;
     flex-basis: 50%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .right__login{
-    width: 80%;
-    height: calc(90%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
-.login__title{
+.login__title {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 36px;
+    margin: 0;
 }
 
-.login__input{
-    margin-top: 20px;
+.login__input {
     display: flex;
     flex-direction: column;
+    margin-top: 1rem;
     font-family: 'Poppins', sans-serif;
 }
 
-.login__input label{
-    margin-bottom: 30px;
+.login__input label {
+    margin-bottom: .5rem;
 }
 
-.login__input input{
-    width: 100%;
+.login__input input {
     border: none;
     background-color: #ECECEC;
     height: 46px;
     border-radius: 11px;
     font-family: 'Poppins', sans-serif;
     outline: none;
+    padding-left: 1rem;
 }
-.login__remember{
-    margin-top: 40px;
+.login__remember {
+    margin-top: 1rem;
     display: flex;
     align-items: center;
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
 }
-.login__remember input{
+.login__remember input {
     width: 42px;
     height: 42px;
     box-sizing: 0px;
 }
 
-.login__remember label{
+.login__remember label {
     margin-left: 20px;
 }
 
-.login__submit{
+.login__submit {
     margin-top: 20px;
     width: 100%;
     display: flex;
@@ -381,14 +384,13 @@ ul::-webkit-scrollbar-button {
 
 
 .submit{
-    width: 60%;
-    height: 64px;
     border: none;
     background-color: #FFA800;
     color: white;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 20px;
+    padding: .5rem 1rem;
     border-radius: 11px;
 }
 
@@ -456,5 +458,21 @@ ul::-webkit-scrollbar-button {
 
     ul::-webkit-scrollbar {
         display: none;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .container__right {
+        display: block;
+        padding: 1rem;
+    }
+
+    .container__left {
+        height: 165px;
+        flex-basis: auto;
+        background-position: center;
     }
 }

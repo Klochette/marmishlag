@@ -25,7 +25,6 @@ if(!empty($_POST)){
     </div>
     <div class="container__right">
         <div class="right__login">
-            <h1 class="login__title">Login</h1> 
             <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" >
                 <div class="login__input">
                     <label for="user_login">Username</label>
@@ -43,7 +42,7 @@ if(!empty($_POST)){
                 </div>
 
                 <div class="login__submit">
-                    <input class="submit" type="submit" value="Login">
+                    <input class="submit" type="submit" value="Se connecter">
                 </div>
 
                 <?php if ($error): ?>

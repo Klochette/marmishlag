@@ -65,7 +65,7 @@ if(!empty($_POST)){
                 </div>
 
                 <div class="login__submit">
-                    <input class="submit" type="submit" value="Se connecter">
+                    <input class="submit" type="submit" value="S'inscrire">
                 </div>
 
             </form>
