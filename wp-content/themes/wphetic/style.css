@@ -38,10 +38,20 @@ h3 {
     display: flex;
 }
 
+.link-action {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9;
+}
+
 .header {
     background-color: #B795FE;
     padding: 2rem 2rem 10rem 5rem;
     padding-bottom: 10rem;
+    margin-top: 80px;
 }
 
 .infos_container {
@@ -51,7 +61,7 @@ h3 {
 }
 
 .infos_container .first, .infos_container .second {
-    flex-basis: 30%;
+    flex-basis: 35%;
     background-color: #ffffff;
 }
 
@@ -114,6 +124,20 @@ h3 {
     flex-basis: 5%;
 }
 
+.preparation h3 {
+    position: relative;
+    width: max-content;
+}
+
+.preparation h3::after {
+    content: '';
+    background-color: #B795FE;
+    width: 35%;
+    height: 10px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+}
 
 .item {
     font-family: 'Poppins', sans-serif;
@@ -128,4 +152,145 @@ h3 {
 .date{
     font-family: 'Poppins', sans-serif;
     margin-top: 3rem;
+}
+
+/* HEADER */
+
+.header_main {
+    background-color: #ffffff;
+    height: 80px;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.header_ctn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left svg {
+    margin-right: 3rem;
+}
+
+.user_name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.user_params a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+/* INDEX */
+
+.index {
+    margin-top: 150px;
+    padding: 3rem;
+    padding-top: 0;
+}
+
+.filter {
+    margin-bottom: 2rem;
+}
+
+.filter p {
+    flex-basis: 10%;
+}
+
+.filter ul {
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    padding-bottom: 1rem;
+    position: relative;
+}
+
+ul::-webkit-scrollbar {
+    width: 15px;
+    height: 5px;
+}
+
+ul::-webkit-scrollbar-track {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+} 
+ul::-webkit-scrollbar-thumb {
+    background-color: #b5b4b4db;
+    border-radius: 10px;
+    width: 5%;
+} 
+ul::-webkit-scrollbar-button {
+    background-color: #ffffff;
+}
+
+.filter li {
+    list-style: none;
+    margin-right: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    font-style: italic;
+
+    border: 1.5px solid #FFA800;
+    padding: 0.25rem 3rem;
+    border-radius: 10px;
+}
+
+.filter p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.post_ctn {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.post_card {
+    position: relative;
+    flex-basis: 30%;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+}
+
+.post_card .img {
+    background-image: var(--bg-image);
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    max-height: 65%;
+    height: 275px;
+}
+
+.post_card .img img {
+    height: 100%;
+}
+
+.post_card .d-f {
+    margin: 1rem 0 0 1rem;
+}
+
+.index .title {
+    font-size: 18px;
+    margin-left: 1rem;
 }
