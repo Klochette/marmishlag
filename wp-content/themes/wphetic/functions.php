@@ -1,7 +1,7 @@
 <?php
 
 function montheme_init() {
-    register_taxonomy('nationalite', 'post', [
+    register_taxonomy('nationalite', 'recipe', [
         'labels' => [
             'name' => 'Nationalité',
             'singular_name' => 'Nationalité',
@@ -19,6 +19,15 @@ function montheme_init() {
         'hierarchical' => true,
         'public' => true,
     ]);
+
+    register_post_type('recipe', [
+        'label' => 'Recettes',
+        'public' => true,
+        'menu_position' => 3,
+        'menu_icon' => 'dashicons-food',
+        'supports' => ['title', 'thumbnail'],
+    ]);
+
     wp_insert_term('Mexicain', 'nationalite');
     wp_insert_term('Asiatique', 'nationalite');
     wp_insert_term('Chinois', 'nationalite');
@@ -64,3 +73,7 @@ add_action('init', 'montheme_init');
 add_action("after_setup_theme", "wphetic_theme_support");
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 add_action('send_headers', 'site_router');
+
+require_once('metaboxes/recipes.php');
+
+RecipesMetaBox::register();
