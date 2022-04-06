@@ -94,17 +94,17 @@
                     </ul>
                 <?php endif ?>
             </div>
+            <?php 
+                endwhile;
+                endif; 
+
+                if (comments_open() || get_comments_number()){
+                    comments_template();
+                }
+            ?>
             <p class="date"><small><?php the_date(); ?></small></p>
         </div>
     </div>
-	<?php 
-        endwhile;
-        endif; 
-
-        if (comments_open() || get_comments_number()){
-            comments_template();
-        }
-    ?>
 <?php get_footer(); ?>
 
 

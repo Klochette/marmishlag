@@ -421,6 +421,59 @@ ul::-webkit-scrollbar-button {
     font-family: 'Poppins', sans-serif;
 }
 
+/* COMMENT */
+
+.comment {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.comment li {
+    padding: 1rem;
+}
+
+.comment li:not(:last-child) {
+    border-bottom: 1px solid #5C5C5C;
+}
+
+.comment a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.comment .fn {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.comment .commentmetadata a {
+    font-size: 14px;
+    color: #5C5C5C;
+}
+
+.comment .commentmetadata, .comment p {
+    padding-left: 2rem;
+}
+
+.comment .comment {
+    background: rgba(255, 168, 0, 0.48);
+}
+
+.comment .reply a {
+    color: #5C5C5C;
+    text-decoration: underline;
+}
+
+.comment img, .comment .says {
+    display: none;
+}
+
+.comment-form-comment label {
+    display: none;
+}
+
 @media (max-width: 806px) {
     .infos_container {
         flex-direction: column-reverse;
