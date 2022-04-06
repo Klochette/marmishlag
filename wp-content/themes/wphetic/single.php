@@ -29,7 +29,7 @@
 	<?php 
         while (have_posts()) : the_post(); 
     ?>
-    <main>
+    <div>
 		<div class="header">
             <h2><?php the_title(); ?></h2>
             <div class="d-f">
@@ -84,7 +84,7 @@
             </div>
             <p class="date"><small><?php the_date(); ?></small></p>
         </div>
-    </main>
+    </div>
 	<?php 
         endwhile;
         endif; 

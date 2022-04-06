@@ -19,24 +19,44 @@ if(!empty($_POST)){
 
 ?>
 <?php get_header();?>
-<h1>Se connecter</h1>
-<?php if ($error): ?>
-    <div>
-        <?php echo $error; ?>
+
+<div class="container">
+    <div class="container__left">
     </div>
-<?php endif ?>
-<form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" >
+    <div class="container__right">
+        <div class="right__login">
+            <h1 class="login__title">Login</h1> 
+            <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" >
+                <div class="login__input">
+                    <label for="user_login">Username</label>
+                    <input type="text" name="user_login" id="user_login">
+                </div>
 
-    <label for="user_login">Votre pseudo</label>
-    <input type="text" name="user_login" id="user_login">
+                <div class="login__input">
+                    <label for="user_password">Votre mot de passe</label>
+                    <input type="password" name="user_password" id="user_password">
+                </div>
 
-    <label for="user_password">Votre mot de passe</label>
-    <input type="password" name="user_password" id="user_password">
+                <div class="login__remember">
+                    <input type="checkbox" name="remember" id="remember" value="1">
+                    <label for="remember">Se souvenir de moi</label>
+                </div>
 
-    <input type="checkbox" name="remember" id="remember" value="1">
-    <label for="remember">Se souvenir de moi</label>
+                <div class="login__submit">
+                    <input class="submit" type="submit" value="Login">
+                </div>
 
-    <input type="submit" value="Se connecter">
-</form>
+                <?php if ($error): ?>
+                    <div>
+                        <p class="error"><?=$error; ?></p>
+                    </div>
+                <?php endif ?>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
  
 <?php get_footer();?>
