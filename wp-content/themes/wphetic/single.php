@@ -22,6 +22,7 @@
     $price = get_post_meta(get_the_ID(), 'price');
     $duration = get_post_meta( get_the_ID(), 'duration');
     $nb_parts = get_post_meta( get_the_ID(), 'nb_parts');
+    $rate = get_post_meta( get_the_ID(), 'rate');
     $preparation = explode("\\" ,get_post_meta( get_the_ID(), 'preparation', true ));
 ?>
 <?php get_header(); ?>
@@ -61,6 +62,16 @@
                                 <?php endforeach ?>
                             </ul>
                         <?php endif ?>
+                    </div>
+                    <div class="rate">
+                        Note :
+                        <?php for($i=0; $i < 5 ; $i++) :?>
+                            <?php if($i < $rate[0]): ?>
+                                <div class="rate__block rate__block--active"></div>
+                            <?php else : ?>
+                                <div class="rate__block"></div>
+                            <?php endif ?>
+                        <?php endfor ?>
                     </div>
                 </div>
                 <div class="second">
