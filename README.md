@@ -1,5 +1,9 @@
 # Marmishlag
 
+## Démarrer le projet 
+
+Aller dans le fichier docker, et `docker-compose up --build`
+
 ## Administration des commentaires
 
 Aller dans `Réglages`, puis dans `Commentaires`.
